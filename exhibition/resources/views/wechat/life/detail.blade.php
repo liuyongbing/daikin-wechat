@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=640, user-scalable=no, minimal-ui, target-densitydpi=255" />
     <script src="https://cdn.bootcss.com/jquery/1.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="/exhibition/public/css/css.css" />
+    <link rel="stylesheet" href="{{ asset('public/css/css.css') }}" />
     <title>大金空调</title>
     <style>
     	
