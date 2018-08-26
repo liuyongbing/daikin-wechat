@@ -18,3 +18,14 @@ Homestead.json
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+
+.buildpath
+.project
+.settings/
+MP_verify_TyIMCUMVSNjagMWZ.txt
+exhibition/
+html/
+info.php
+life/
+web.config
+wxWebApiProxy/
