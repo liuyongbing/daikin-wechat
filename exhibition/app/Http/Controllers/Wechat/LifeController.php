@@ -7,6 +7,7 @@ use App\Http\Model\Life;
 use App\Http\Model\LifeType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use App\Http\Model\Designer;
 
 class LifeController extends Controller
 {
@@ -47,9 +48,23 @@ class LifeController extends Controller
             abort(404);
         }
         
-        $types = LifeType::all();
+        $designer = [];
+        $recommend = [];
+        $data->designer_id = 0;
+        if (!empty($data->designer_id))
+        {
+            $designer = Designer::where(['state' => 0])->find($data->designer_id);
+        }
+        else
+        {
+            //推荐内容:同类型下的最新3条记录
+            $cur_type_id = $data->type_id;
+            $recommend   = Life::where('state','!=',1)
+                            ->where('type_id','=',$cur_type_id)
+                            ->orderBy('id','desc')
+                            ->paginate(3);
+        }
         
-        // dd($member);
-        return view('wechat.life.detail',compact('data','types'));
+        return view('wechat.life.detail',compact('data', 'designer', 'recommend'));
     }
 }

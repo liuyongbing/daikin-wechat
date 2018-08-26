@@ -44,9 +44,15 @@
     @if (!empty($data))
         @foreach($data as $item)
 		<div class="col">
-			<div class="ovf"><img src="/exhibition/public/images/del-img20180825.jpg"></div>
-			<label><a href="{{ route('wechat.life.detail', ['id' => $item->id]) }}" >有毛的标题, 暂时显示ID{{ $item->id }}</a></label>
-			<span>{{ $item->desc }}</span>
+            @if (!empty($item->img))
+			<div class="ovf">
+                <a href="{{ route('wechat.life.detail', ['id' => $item->id]) }}" >
+                    <img src="{{$item->img}}" />
+                </a>
+            </div>
+            @endif
+			<label><a href="{{ route('wechat.life.detail', ['id' => $item->id]) }}" >{{ $item->title }}</a></label>
+			<span>{!! $item->desc !!}</span>
 		</div>
         @endforeach
     @endif		

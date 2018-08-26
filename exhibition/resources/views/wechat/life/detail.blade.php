@@ -47,73 +47,56 @@
 	
 	<div class="video">
 		<video src=""></video>
-        {{! $data->video }}
+        {!! $data->video !!}
 		<label>(请在wifi情况下观看）</label>
 	</div>
 	
 	<div class="video-txt">
-		<b>有毛的标题, 暂时显示ID{{ $data->id }}</b>
-		<p>{{ $data->desc }}</p>
+		<b>{{ $data->title }}</b>
+		<p>{!! $data->desc !!}</p>
 	</div>
 	
 	<!--设计师-->
+    @if (!empty($designer))
 	<div class="designerd-div ">
-		<div class="title"><span>设计师</span><label>刘建平</label></div>
+		<div class="title"><span>设计师</span><label>{{ $designer->name }}</label></div>
 		<div class="designer-list">
 			<div class="col">
-				<div class="ovf"><img src="/exhibition/public/images/del-photo.jpg" /></div>
+                @if (!empty($designer->img))
+				<div class="ovf"><img src="{{ $designer->img }}" /></div>
+                @endif
 				<div class="txt">
-					<b>用自然与艺术演绎设计</b>
-					<p>设计师介绍设计师介绍设计师介绍设师介绍设计师介绍设计绍设计师介绍设计师介绍设计师介师介绍师介绍设计师介绍设计师介绍师介绍设计师介绍设计师介绍计师介绍设计师介绍设计师介绍设计师介绍设计师介绍设计师介绍设计师介绍</p>
+					<b>{{ $designer->title }}</b>
+					{!! $designer->desc !!}
 				</div>
 			</div>
-			
-			<div class="col">
-				<div class="ovf"><img src="/exhibition/public/images/del-photo.jpg" /></div>
-				<div class="txt">
-					<b>用自然与艺术演绎设计</b>
-					<p>设计师介绍设计师介绍设计师介绍设师介绍设计师介绍设计绍设计师介绍设计师介绍设计师介师介绍师介绍设计师介绍设计师介绍师介绍设计师介绍设计师介绍计师介绍设计师介绍设计师介绍设计师介绍设计师介绍设计师介绍设计师介绍</p>
-				</div>
-			</div>
-			
-			<div class="col">
-				<div class="ovf"><img src="/exhibition/public/images/del-photo.jpg" /></div>
-				<div class="txt">
-					<b>用自然与艺术演绎设计</b>
-					<p>设计师介绍设计师介绍设计师介绍设师介绍设计师介绍设计绍设计师介绍设计师介绍设计师介师介绍师介绍设计师介绍设计师介绍师介绍设计师介绍设计师介绍计师介绍设计师介绍设计师介绍设计师介绍设计师介绍设计师介绍设计师介绍</p>
-				</div>
-			</div>
-			
 		</div>
 	</div>
+    @endif
 	<!--设计师-->
 	
+    @if (!empty($recommend))
 	<!--其他优秀设计-->
-	<div class="other-div undis">
+	<div class="other-div">
 		<div class="title"><span>其他优秀设计</span></div>
 		<div class="other-list">
+        @foreach($recommend as $life)
 			<div class="col">
-				<div class="ovf"><img src="images/del-other.jpg"></div>
+                @if (!empty($life->img))
+				<div class="ovf"><img src="{{ $life->img }}"></div>
+                @endif
 				<div class="txt">
-					<b>案例标题案例标题案例标</b>
-					<p>案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍</p>
+					<b>{{ $life->title }}</b>
+					<p>{!! $life->desc !!}</p>
 				</div>
-			</div>
-			
-			<div class="col">
-				<div class="ovf"><img src="images/del-other.jpg"></div>
-				<div class="txt">
-					<b>案例标题案例标题案例标</b>
-					<p>案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍</p>
-				</div>
-			</div>
+			</div>  
+        @endforeach
 		</div>
 	</div>
 	<!--其他优秀设计-->
+    @endif
 	
 </div>
-
-
 
 </body>
 </html>
