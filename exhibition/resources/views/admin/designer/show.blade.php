@@ -60,6 +60,12 @@
                             <td>
                                 <input type="file" name="upload_file" class="txt" style="width: 520px;" />
                                 <input type="hidden" name="img" value="{{old('img', $data->img)}}" />
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <th>预览：</th>
+                            <td>
                                 @if (!empty($data->img))
                                     <img src="{{ $data->img }}" />
                                 @endif

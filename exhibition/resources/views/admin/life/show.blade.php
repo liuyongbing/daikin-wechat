@@ -61,11 +61,19 @@
                         <td>
                             <input type="file" name="upload_file" class="txt" style="width: 520px;" />
                             <input type="hidden" name="img" value="{{old('img', $data->img)}}" />
+                        </td>
+                    </tr>
+                    
+                    @if (!empty($data->img))
+                    <tr>
+                        <th>预览：</th>
+                        <td>
                             @if (!empty($data->img))
                                 <img src="{{ $data->img }}" />
                             @endif
                         </td>
                     </tr>
+                    @endif
                     
                     <th>设计师：</th>
                         <td>
@@ -99,10 +107,12 @@
 							<label class="desc"><input name="display" type="radio"  value="1" @if(old('display',$data->display) == 1)) checked @endif/>是 </label> 
 							<label class="desc"><input name="display" type="radio"  value="0" @if(old('display',$data->display) == 0)) checked @endif/>否 </label> 
 							</td>
-						</tr>                    <tr>
-                        <th><a href="javascript:void(0)" class="btnsub" onclick="submitForm()">提交</a></th>
-                        <td>&nbsp;</td>
-                    </tr>
+						</tr>
+                        
+                        <tr>
+                            <th>&nbsp;</th>
+                            <td><a href="javascript:void(0)" class="btnsub" onclick="submitForm()">提交</a></td>
+                        </tr>
                 </table>
             </div>
         </div>
