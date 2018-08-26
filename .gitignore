@@ -69,7 +69,17 @@ exhibition/resources/org/
 exhibition/resources/public/
 #exhibition/resources/views/
 exhibition/resources/views/_layout/
-exhibition/resources/views/admin/
+#exhibition/resources/views/admin/
+exhibition/resources/views/admin/awards/
+exhibition/resources/views/admin/instruction/
+exhibition/resources/views/admin/life/createBanner.blade.php
+exhibition/resources/views/admin/life/listBanner.blade.php
+exhibition/resources/views/admin/life/showBanner.blade.php
+exhibition/resources/views/admin/member/
+exhibition/resources/views/admin/messages/
+exhibition/resources/views/admin/paginate.blade.php
+exhibition/resources/views/admin/shop/
+exhibition/resources/views/admin/user/
 exhibition/resources/views/errors/
 exhibition/resources/views/except.blade.php
 exhibition/resources/views/map.blade.php
@@ -100,7 +110,16 @@ exhibition/app/Policies/
 exhibition/app/Providers/
 
 #exhibition/app/Http/Controllers/
-exhibition/app/Http/Controllers/Admin/
+#exhibition/app/Http/Controllers/Admin/
+exhibition/app/Http/Controllers/Admin/AwardsController.php
+exhibition/app/Http/Controllers/Admin/InstructionController.php
+exhibition/app/Http/Controllers/Admin/LifeController.php
+exhibition/app/Http/Controllers/Admin/MemberController.php
+exhibition/app/Http/Controllers/Admin/MessageController.php
+exhibition/app/Http/Controllers/Admin/ShopController.php
+exhibition/app/Http/Controllers/Admin/UserController.php
+exhibition/app/Http/Controllers/Admin/WelcomeController.php
+exhibition/app/Http/Controllers/Admin/WxauthController.php
 exhibition/app/Http/Controllers/Auth/
 exhibition/app/Http/Controllers/Controller.php
 exhibition/app/Http/Controllers/ImgUploadController.php

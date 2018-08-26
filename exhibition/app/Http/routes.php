@@ -88,6 +88,9 @@ Route::group(['prefix' => 'admin','middleware'=>'admin.login'], function () {
     Route::post('life/delBanner','Admin\LifeController@delBanner');
     Route::resource('life','Admin\LifeController');
     
+    //设计师
+    Route::resource('designer','Admin\DesignerController');
+    
     //空调使用说明管理路由
     Route::get('instruction','Admin\InstructionController@index');
     Route::post('instruction/destroy','Admin\InstructionController@destroy');
