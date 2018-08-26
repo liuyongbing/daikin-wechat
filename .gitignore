@@ -114,7 +114,6 @@ exhibition/app/Providers/
 #exhibition/app/Http/Controllers/Admin/
 exhibition/app/Http/Controllers/Admin/AwardsController.php
 exhibition/app/Http/Controllers/Admin/InstructionController.php
-exhibition/app/Http/Controllers/Admin/LifeController.php
 exhibition/app/Http/Controllers/Admin/MemberController.php
 exhibition/app/Http/Controllers/Admin/MessageController.php
 exhibition/app/Http/Controllers/Admin/ShopController.php
