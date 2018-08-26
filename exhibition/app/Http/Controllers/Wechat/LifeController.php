@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Wechat;
 
 use App\Http\Controllers\Controller;
-use App\Http\Model\Banner;
 use App\Http\Model\Life;
 use App\Http\Model\LifeType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Validator;
 
 class LifeController extends Controller
 {
@@ -19,7 +17,7 @@ class LifeController extends Controller
      * @return  mixed
      */
     // list
-    public function index()
+    public function index(Request $request)
     {
         $input=Input::except('_token');
         
@@ -34,9 +32,9 @@ class LifeController extends Controller
         
         if ($data&&count($data)>0)
             foreach ($data as $life_obj){
-                $life_obj->type = LifeType::find($life_obj->type_id)->name;        
+                $life_obj->type = LifeType::find($life_obj->type_id)->name;
             }
-    
+        
         return view('wechat.life.list',compact('data','types','cur_type_id'));
     }
     
@@ -45,9 +43,9 @@ class LifeController extends Controller
     {
         $data=Life::where('state',0)->find($id);
         
-//         if(!$data){
-//             abort(404);
-//         }
+        if(!$data){
+            abort(404);
+        }
         
         $types = LifeType::all();
         

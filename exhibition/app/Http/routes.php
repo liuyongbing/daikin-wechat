@@ -31,8 +31,8 @@ Route::get('web_success',function (){
 Route::get('wechat/awards_list','Wechat\AwardsController@index');
 Route::get('wechat/awards_data','Wechat\AwardsController@getData');
 
-Route::get('wechat/life','Wechat\LifeController@index');
-Route::get('wechat/life/{id}','Wechat\LifeController@show');
+Route::get('wechat/life','Wechat\LifeController@index')->name('wechat.life.list');
+Route::get('wechat/life/{id}','Wechat\LifeController@show')->name('wechat.life.detail');
 
 Route::get('wechat/instru_index','Wechat\InstructionsController@index');
 Route::get('wechat/instru_search','Wechat\InstructionsController@search');

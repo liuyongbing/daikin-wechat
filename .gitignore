@@ -41,7 +41,14 @@ exhibition/bootstrap/
 exhibition/composer.json
 exhibition/composer.lock
 exhibition/config/
-exhibition/database/
+#exhibition/database/
+exhibition/database/.gitignore
+exhibition/database/factories/
+#exhibition/database/migrations/
+exhibition/database/migrations/.gitkeep
+exhibition/database/migrations/2014_10_12_000000_create_users_table.php
+exhibition/database/migrations/2014_10_12_100000_create_password_resets_table.php
+exhibition/database/seeds/
 exhibition/gulpfile.js
 exhibition/index.php
 exhibition/package.json

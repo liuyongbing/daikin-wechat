@@ -32,42 +32,26 @@
 	</div>
 	
 	<div class="list-type">
-		<a href="javascript:void(0);">品味生活篇</a>
-		<a class="tag" href="javascript:void(0);">设计师篇</a>
-		<a href="javascript:void(0);">用户案例篇</a>
+    @if (!empty($types))
+        @foreach($types as $type)
+		<a href="{{ route('wechat.life.list', ['cur_type_id' => $type->id]) }}" class="{{ $cur_type_id == $type->id ? 'tag' : '' }}">{{ $type->name }}</a>
+        @endforeach
+    @endif
 	</div>
 	
 	<div class="list-cen">
+    
+    @if (!empty($data))
+        @foreach($data as $item)
 		<div class="col">
 			<div class="ovf"><img src="/exhibition/public/images/del-img20180825.jpg"></div>
-			<label>标题XXX</label>
-			<span>描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX</span>
+			<label><a href="{{ route('wechat.life.detail', ['id' => $item->id]) }}" >有毛的标题, 暂时显示ID{{ $item->id }}</a></label>
+			<span>{{ $item->desc }}</span>
 		</div>
-		
-		<div class="col">
-			<div class="ovf"><img src="/exhibition/public/images/del-img20180825.jpg"></div>
-			<label>标题XXX</label>
-			<span>描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX</span>
-		</div>
-		
-		<div class="col">
-			<div class="ovf"><img src="/exhibition/public/images/del-img20180825.jpg"></div>
-			<label>标题XXX</label>
-			<span>描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX</span>
-		</div>
-		
-		<div class="col">
-			<div class="ovf"><img src="/exhibition/public/images/del-img20180825.jpg"></div>
-			<label>标题XXX</label>
-			<span>描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX描述XXX</span>
-		</div>
-		
-		
-	</div>
-	
-	
+        @endforeach
+    @endif		
+	</div>	
 </div>
-
 
 <script>
 	

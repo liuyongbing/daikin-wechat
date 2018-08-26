@@ -47,12 +47,13 @@
 	
 	<div class="video">
 		<video src=""></video>
+        {{! $data->video }}
 		<label>(请在wifi情况下观看）</label>
 	</div>
 	
 	<div class="video-txt">
-		<b>养老房改建篇</b>
-		<p>例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍案例介绍</p>
+		<b>有毛的标题, 暂时显示ID{{ $data->id }}</b>
+		<p>{{ $data->desc }}</p>
 	</div>
 	
 	<!--设计师-->
