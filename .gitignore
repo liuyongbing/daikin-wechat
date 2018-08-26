@@ -68,7 +68,8 @@ exhibition/resources/lang/
 exhibition/resources/org/
 exhibition/resources/public/
 #exhibition/resources/views/
-exhibition/resources/views/_layout/
+#exhibition/resources/views/_layout/
+exhibition/resources/views/_layout/admin.blade.php
 #exhibition/resources/views/admin/
 exhibition/resources/views/admin/awards/
 exhibition/resources/views/admin/instruction/
