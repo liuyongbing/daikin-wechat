@@ -14,7 +14,7 @@ class CreateDesignersTable extends Migration
     {
         Schema::create('designers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username', 32)->default('');
+            $table->string('name', 32)->default('');
             $table->string('title', 128)->default('');
             $table->string('img', 128)->default('');
             $table->string('desc', 5000)->default('');
