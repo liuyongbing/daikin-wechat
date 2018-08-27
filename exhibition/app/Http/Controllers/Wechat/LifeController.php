@@ -50,7 +50,6 @@ class LifeController extends Controller
         
         $designer = [];
         $recommend = [];
-        $data->designer_id = 0;
         if (!empty($data->designer_id))
         {
             $designer = Designer::where(['state' => 0])->find($data->designer_id);
