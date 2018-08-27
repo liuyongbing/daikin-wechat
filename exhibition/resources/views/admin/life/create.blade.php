@@ -109,21 +109,14 @@
 							</tr>
 							--}}
 							<tr>
-								<th><a href="javascript:void(0)" class="btnsub"
-									onclick="submitForm()">提交</a></th>
-								<td>&nbsp;</td>
+								<th>&nbsp;</th>
+								<td><a href="javascript:void(0)" class="btnsub" onclick="submitForm()">提交</a></td>
 							</tr>
 						</table>
 					</div>
 				</div>
 			</form>
-
-
-
-
-
 		</div>
-
 	</div>
 
 	<script>
