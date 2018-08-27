@@ -22,7 +22,7 @@
     .designerd-div .ovf{ margin-right:15px; float:left; width:202px;}
     .designerd-div .txt{}
     .designerd-div .txt b{ font-size:24px; margin-bottom:20px; display:block; margin-bottom:10px;}
-    .designerd-div .txt p{ height:160px; overflow:hidden; font-size:18px; color:#666; line-height:32px;}
+    .designerd-div .txt p{ overflow:hidden; font-size:18px; color:#666; line-height:32px;}
     
     .other-div{ padding:20px 40px;}
     .other-div .title{ margin-bottom:20px;}
