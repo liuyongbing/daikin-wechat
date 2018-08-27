@@ -31,7 +31,7 @@ class UploadRepository
                     
                     $bool = Storage::disk('uploads')->put($filetype . '/' . $filename, file_get_contents($realPath));
                     if ($bool) {
-                        $filename = '/exhibition/public/uploads/' . $filetype . '/' . $filename;
+                        $filename = env('UPLOAD_ROOT_FOLDER', '') . '/public/uploads/' . $filetype . '/' . $filename;
                     }
                 }
             }
