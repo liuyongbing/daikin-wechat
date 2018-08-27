@@ -67,7 +67,7 @@
                             <th>预览：</th>
                             <td>
                                 @if (!empty($data->img))
-                                    <img src="{{ $data->img }}" />
+                                    <img src="{{ $data->img }}" width="202" height="202" />
                                 @endif
                             </td>
                         </tr>
