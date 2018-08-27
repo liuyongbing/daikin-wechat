@@ -111,10 +111,13 @@ class LifeController extends Controller
             return redirect('admin/life');
         }
         
+        $types=LifeType::all();
+        
         $designers = Designer::where('state','!=',1)->get();
         
         return view('admin.life.show', [
-            'data' => $data,
+            'data'      => $data,
+            'types'     => $types,
             'designers' => $designers,
         ]);
     }
