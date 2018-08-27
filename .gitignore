@@ -54,6 +54,7 @@ exhibition/index.php
 exhibition/package.json
 exhibition/phpunit.xml
 #exhibition/public/
+exhibition/public/css/touchcarousel.css
 exhibition/public/favicon.ico
 exhibition/public/index.html
 exhibition/public/index.php
@@ -63,7 +64,17 @@ exhibition/public/uploads/
 exhibition/public/web.config
 exhibition/readme.md
 
-exhibition/resources/assets/
+#exhibition/resources/assets/
+#exhibition/resources/assets/admin/
+#exhibition/resources/assets/admin/css/
+exhibition/resources/assets/admin/css/touchcarousel.css
+exhibition/resources/assets/admin/css/update_img.css
+exhibition/resources/assets/admin/images/
+exhibition/resources/assets/admin/js/
+exhibition/resources/assets/home/
+exhibition/resources/assets/sass/
+exhibition/resources/assets/web/
+exhibition/resources/assets/wechat/
 exhibition/resources/lang/
 exhibition/resources/org/
 exhibition/resources/public/

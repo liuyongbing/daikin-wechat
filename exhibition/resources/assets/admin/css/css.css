@@ -1,0 +1,73 @@
+body{margin:0;padding:0;text-align:left;font-size:12px;font-family:'Microsoft YaHei',Arial}table{border-collapse:collapse}td,th{padding:0}dd,dl,dt,li,ul{margin:0;padding:0;list-style:none;word-break:break-all}img{border:0}p{margin:0;word-break:break-all}.clear{clear:both;height:0;font-size:1px;line-height:0}input,select,textarea{font-family:inherit;outline:0}.none{display:none}.fl{float:left}.fr{float:right}
+span,a{-webkit-tap-highlight-color:rgba(0,0,0,0); text-decoration:none;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix:after {visibility: hidden;display:block;font-size:0;content:"";clear:both;height: 0;}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+#wrapper{width:1366px; margin:0 auto; position:relative; height:834px; background-color:#f0f0f0;}
+.leftmenu{ float:left; width:240px; background:#0096e0;height:834px;}
+.leftmenu ul{  padding-left:20px;}
+.leftmenu ul li{ background-color:#ffffff; border-radius:5px 0 0 5px; text-align:right; width:200px; padding-right:20px; height:44px; line-height:44px; margin-top:22px; font-size:22px;}
+.leftmenu ul li a{ color:#0096e0;}
+.leftmenu ul li a.active{color:#333333;}
+
+.main{ float:left; margin-left:24px; width:1078px;padding-top:25px;}
+.adminlogo{ height:99px; width:240px;}
+
+.maintop{ border:#c1c1c1 2px solid; border-radius:5px; height:70px; background-color:#fff;}
+.schbox{ padding:18px; height:32px;}
+.schbox .txt{ width:174px; height:28px; line-height:28px; color:#b2b2b2; font-size:20px; text-align:center; border:#c1c1c1 2px solid; border-radius:5px;}
+.schbox span{ font-size:14px; color:#737373; padding:0 8px;}
+.schbox a{ display:inline-block; background-color:#0096e0; border-radius:5px; color:#fff; width:76px; height:28px; line-height:28px; text-align:center; margin-left:10px; font-size:14px;}
+
+.mainbom{ border:#c1c1c1 2px solid; border-radius:5px;background-color:#fff; height:576px; overflow-y:auto; margin-top:25px;}
+.mainbom_instru{ border:#c1c1c1 2px solid; border-radius:5px;background-color:#fff; height:576px; overflow-y:auto; margin-top:70px;}
+.listbox table{ width:100%;}
+.listbox th{ border-bottom:#c1c1c1 2px solid; height:79px; line-height:79px; font-size:24px; color:#4c4c4c; font-weight:normal;text-align:left;}
+.listbox .instru{ border-bottom:#c1c1c1 2px solid; height:70px; line-height:29px; font-size:24px; color:#4c4c4c; font-weight:normal;text-align:left;}
+.listbox td{ height:55px;  font-size:18px; color:#5d5d5d;}
+.listbox td a{ display:inline-block; padding:0 12px; height:30px; line-height:30px; text-align:center; color:#fff; background-color:#0096e0; border-radius:5px;}
+.listbox .odd td{ background-color:#f3f3f3;}
+
+.mainend{ position:relative; margin-top:18px;}
+.mainend .btnout{ position:absolute; display:block; width:88px; height:29px; background-color:#0096e0; color:#fff; border-radius:5px; text-align:center; line-height:29px; right:79px; top:0; font-size:16px;}
+.fpage{ text-align:right; padding-right:182px; line-height:29px; font-size:22px;color:#5d5d5d;}
+.fpage a{ margin:0 7px; color:#5d5d5d;}
+.fpage a:hover{ text-decoration:underline; color:#0096e0;}
+.fpage a.active{color:#0096e0;}
+
+.logstate{ padding-top:85px; height:32px; line-height:32px; text-align:right; color:#fff; padding-right:15px; font-size:24px;}
+.logstate a{ color:#fff;}
+
+
+.backlist{ padding-left:27px; line-height:70px; color:#0096e0; font-size:24px;}
+.backlist a{ color:#0096e0; font-size:24px;}
+
+.modbox{ padding-left:28px; padding-top:22px;}
+.modbox th{ height:75px; width:128px; line-height:75px; font-size:24px; color:#333333; font-weight:normal; text-align:left; }
+.modbox .txt{ border:1px solid #a0a0a0; width:204px; height:36px; line-height:36px; border-radius:5px; padding:0 5px;color:#5d5d5d; font-size:18px;}
+.modbox a.btnsub{ display:block; width:105px; height:35px; line-height:35px; background-color:#0096e0; font-size:22px; color:#fff; border-radius:5px; text-align:center;}
+.modbox span.btnsub{background-color:#0096e0; border-radius:5px; color:#fff; width:76px; height:28px; line-height:28px; text-align:center; margin-left:10px; font-size:14px;}
+.spantag{font-size:24px; color:#333333; padding-left:28px; padding-right:54px;}
+.modbox .accountTr th{ height:52px;line-height:52px; }
+.modbox a.delrows{ display:inline-block;background-color:#0096e0; width:60px; height:29px; line-height:29px; font-size:18px; margin-left:24px; color:#fff; border-radius:5px; text-align:center;}
+.modbox a.addrows{display:inline-block;background-color:#0096e0; width:60px; height:29px; line-height:29px; font-size:18px; margin-left:240px; color:#fff; border-radius:5px; text-align:center;}
+.modbox label.desc{border:0px; width:204px; height:36px; line-height:36px; border-radius:5px; padding:0 5px;color:#5d5d5d; font-size:18px;}
+.modbox .select{ border:1px solid #a0a0a0; width:204px; height:36px; line-height:36px; border-radius:5px; padding:0 5px;color:#5d5d5d; font-size:18px;}
+
+#loginWrap{ background:url(../images/log.jpg) no-repeat center 0; width:100%; height:834px;}
+.loginbox{ width:380px; margin:0 auto; position:relative;}
+.loginbox .txt{ width:260px; height:30px; line-height:30px; position:absolute; right:4px; color:#000; font-size:16px; border:none; background:none;}
+.btnlog{ position:absolute; display:block; width:85px; height:30px; right:0; top:535px;}
+
+
+
+
+
+
+
+
+
+
+
