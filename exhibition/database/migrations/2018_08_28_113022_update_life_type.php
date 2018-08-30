@@ -13,7 +13,7 @@ class UpdateLifeType extends Migration
      */
     public function up()
     {
-        LifeType::where('id', 1)->update(['name' =>'口味生活篇']);
+        LifeType::where('id', 1)->update(['name' =>'品味生活篇']);
         LifeType::where('id', 3)->update(['name' =>'用户案例篇']);
     }
 
