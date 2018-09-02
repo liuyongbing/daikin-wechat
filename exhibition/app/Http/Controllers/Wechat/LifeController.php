@@ -64,6 +64,18 @@ class LifeController extends Controller
                             ->paginate(3);
         }
         
-        return view('wechat.life.detail',compact('data', 'designer', 'recommend'));
+        if (!empty($data->recommend_ids))
+        {
+            $recommendIds = json_decode($data->recommend_ids, true);
+            $conditions = ['id' => $recommendIds, 'state' => 0];
+            $recommendCases = Life::where($conditions)->get();
+        }
+        
+        return view('wechat.life.detail', [
+            'data'              => $data,
+            'designer'          => $designer,
+            'recommend'         => '$recommend',
+            'recommendCases'   => '$recommendCases',
+        ]);
     }
 }
