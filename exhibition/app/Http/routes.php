@@ -87,6 +87,7 @@ Route::group(['prefix' => 'admin','middleware'=>'admin.login'], function () {
     Route::post('life/updateBanner/{id}','Admin\LifeController@updateBanner');
     Route::post('life/delBanner','Admin\LifeController@delBanner');
     Route::resource('life','Admin\LifeController');
+    Route::resource('life_type','Admin\LifeTypeController');
     
     //设计师
     Route::resource('designer','Admin\DesignerController');

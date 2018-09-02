@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Model\Designer;
-use App\Http\Model\Life;
 use App\Http\Model\LifeType;
 use App\Repositories\UploadRepository;
 use Illuminate\Http\Request;
