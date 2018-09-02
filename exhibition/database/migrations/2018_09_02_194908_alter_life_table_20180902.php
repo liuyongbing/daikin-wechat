@@ -12,7 +12,9 @@ class AlterLifeTable20180902 extends Migration
      */
     public function up()
     {
-        $table->string('recommend_ids', 128)->default('')->after('designer_id');
+        Schema::table('life', function (Blueprint $table) {
+            $table->string('recommend_ids', 128)->default('')->after('designer_id');
+        });
     }
 
     /**
