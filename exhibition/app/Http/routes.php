@@ -89,10 +89,10 @@ Route::group(['prefix' => 'admin','middleware'=>'admin.login'], function () {
     Route::resource('life','Admin\LifeController');
     Route::resource('life_type','Admin\LifeTypeController');
     
-    //设计师
-    Route::resource('designer','Admin\DesignerController');
     //设计师案例
     Route::get('designer/cases','Admin\DesignerController@cases')->name('designer.cases');
+    //设计师
+    Route::resource('designer','Admin\DesignerController');
     
     //空调使用说明管理路由
     Route::get('instruction','Admin\InstructionController@index');

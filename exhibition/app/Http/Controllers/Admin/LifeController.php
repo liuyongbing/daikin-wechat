@@ -128,7 +128,7 @@ class LifeController extends Controller
         $designers = Designer::where('state','!=',1)->get();
         
         $designerRep = new DesignerRepository();
-        $cases = $designerRep->cases($data->designer_id);
+        $cases = $designerRep->cases($data->designer_id, $data->id);
         
         $recommendIds = [];
         if (!empty($data->recommend_ids))
