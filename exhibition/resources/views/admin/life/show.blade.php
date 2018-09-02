@@ -228,7 +228,7 @@ $(function (e) {
             var url = "{{ route('designer.cases') }}";
             
             $.ajax({
-                url: url + '?designer_id=' + designer_id + '&except=' + ,
+                url: url + '?designer_id=' + designer_id + '&except=' + '',
                 type: "get",
                 data:  "",
                 contentType: false,
