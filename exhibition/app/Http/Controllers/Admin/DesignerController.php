@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Model\Designer;
+use App\Http\Model\Life;
 use App\Http\Model\LifeType;
 use App\Repositories\UploadRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
+use App\Repositories\DesignerRepository;
 
 class DesignerController extends Controller
 {
@@ -146,5 +148,12 @@ class DesignerController extends Controller
         }else{
             return false;
         }
+    }
+    
+    
+    // 设计师的所有案例: 用于推荐设计师相关案例
+    public function cases(DesignerRepository $repository, $id)
+    {
+        return $repository->cases($id);
     }
 }

@@ -77,12 +77,24 @@
                     
                     <th>设计师：</th>
                         <td>
-                            <select class="select" name="designer_id" style="width: 530px;">
+                            <select class="select" name="designer_id" id="designer_id" style="width: 530px;">
                                 <option value="0">请选择</option>
                                 @foreach($designers as $designer)
                                 <option value ="{{$designer->id}}" @if(old('designer_id', $data->designer_id)==$designer->id) selected="selected" @endif>{{$designer->name}}</option>
                                 @endforeach
                             </select>
+                        </td>
+                    </tr>
+                    
+                    <th>推荐案例：</th>
+                        <td id="designer_cases">
+                            @if (!empty($cases))
+                            <ul>
+                                @foreach($cases as $case)
+                                <li><input class="checkbox" type="checkbox" name="recommend_ids[]" value="{{ $case->id }}" @if(in_array($case->id, $recommendIds)) checked @endif />{{ $case->title }}</li>
+                                @endforeach
+                            </ul>
+                            @endif
                         </td>
                     </tr>
                     
@@ -201,6 +213,44 @@ $(function (e) {
     // 触发文件选择窗口
     $('.js-reset-image span').on('click', function () {
         $('input[name=image]').trigger('click');
+    });
+    
+    //设计师案例
+    var designer_id = 0;
+    var html = '';
+    $("#designer_id").change(function() {
+        designer_id = $(this).val();
+        if (designer_id > 0)
+        {
+            var url = "{{ route('designer.cases', ['id' => 123]) }}";
+            url.replace('/\d+/', designer_id);
+var url = "http://wechat.daikin.com:8008/exhibition/admin/designer/cases/" + designer_id;
+            $.ajax({
+                url: url,
+                type: "get",
+                data:  "",
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (data) {
+                    if (data)
+                    {
+                        html = '<ul>';
+                        $.each(data, function(i, item) {
+                            html += '<li>';
+                            html += '<input class="checkbox" type="checkbox" name="recommend_ids[]" value="';
+                            html += item.id;
+                            html += '">';
+                            html += item.title;
+                            html += '</li>';
+                        });
+                        html += '</ul>';
+                        $('#designer_cases').html(html);
+                    }
+                },
+                error: function(){}             
+            });
+        }
     });
 });
 </script>

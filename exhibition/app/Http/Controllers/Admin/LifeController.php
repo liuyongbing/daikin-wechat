@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Model\Designer;
+use App\Repositories\DesignerRepository;
 
 class LifeController extends Controller
 {
@@ -85,6 +86,7 @@ class LifeController extends Controller
                     'video'         => $input['video'],
                     'desc'          => $input['desc'],
                     'designer_id'   => $input['designer_id'],
+                    'recommend_ids' => !empty($input['recommend_ids']) ? json_encode($input['recommend_ids']) : '',
                     'sort'          => isset($input['sort'])?$input['sort']:0,
                     'display'       => isset($input['display'])?$input['display']:1,
                     'state'         => 0
@@ -111,14 +113,25 @@ class LifeController extends Controller
             return redirect('admin/life');
         }
         
-        $types=LifeType::all();
+        $types = LifeType::all();
         
         $designers = Designer::where('state','!=',1)->get();
         
+        $designerRep = new DesignerRepository();
+        $cases = $designerRep->cases($data->designer_id);
+        
+        $recommendIds = [];
+        if (!empty($data->recommend_ids))
+        {
+            $recommendIds = json_decode($data->recommend_ids, true);
+        }
+        
         return view('admin.life.show', [
-            'data'      => $data,
-            'types'     => $types,
-            'designers' => $designers,
+            'cases'         => $cases,
+            'data'          => $data,
+            'designers'     => $designers,
+            'recommendIds'  => $recommendIds,
+            'types'         => $types,
         ]);
     }
         
@@ -126,7 +139,6 @@ class LifeController extends Controller
     public function update(Request $request, $id)
     {
         $input=Input::except('_token');
-        
         $request->flash ();
         if($input){
             $roule=[
@@ -153,6 +165,7 @@ class LifeController extends Controller
                     'video'         => $input['video'],
                     'desc'          => $input['desc'],
                     'designer_id'   => $input['designer_id'],
+                    'recommend_ids' => !empty($input['recommend_ids']) ? json_encode($input['recommend_ids']) : '',
                     'sort'          => isset($input['sort'])?$input['sort']:0,
                     'display'       => isset($input['display'])?$input['display']:1,
                     'state'         => 0
