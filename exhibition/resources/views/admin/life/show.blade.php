@@ -218,6 +218,7 @@ $(function (e) {
     });
     
     //设计师案例
+    var recommend_ids = {{ json_encode($recommendIds) }};
     var designer_id = 0;
     var html = '';
     $("#designer_id").change(function() {
