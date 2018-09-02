@@ -244,11 +244,13 @@ $(function (e) {
                             html += '<input class="checkbox" type="checkbox" name="recommend_ids[]" value="';
                             html += item.id;
                             html += '"';
-                            if (item.id == current_id)
+                            //TODO:当item.id是recommend_ids的子集时, 需要执行选中
+                            /*if (item.id == current_id)
                             {
+                                
                                 html += ' checked ';
-                            }
-                            html += '>';
+                            }*/
+                            html += ' />';
                             html += item.title;
                             html += '</li>';
                         });
