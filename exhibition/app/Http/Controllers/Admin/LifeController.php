@@ -55,7 +55,17 @@ class LifeController extends Controller
         
         $designers = Designer::where('state','!=',1)->get();
         
-        return view('admin.life.create',compact('types', 'designers'));
+        $designerRep = new DesignerRepository();
+        $cases = $designerRep->cases($data->designer_id);
+        
+        $recommendIds = [];
+        
+        return view('admin.life.create', [
+            'cases'         => $cases,
+            'designers'     => $designers,
+            'recommendIds'  => $recommendIds,
+            'types'         => $types,
+        ]);
     }
     // store 添加到数据库
     public function store(Request $request)

@@ -75,7 +75,8 @@
                     </tr>
                     @endif
                     
-                    <th>设计师：</th>
+                    <tr>
+                        <th>设计师：</th>
                         <td>
                             <select class="select" name="designer_id" id="designer_id" style="width: 530px;">
                                 <option value="0">请选择</option>
@@ -86,7 +87,8 @@
                         </td>
                     </tr>
                     
-                    <th>推荐案例：</th>
+                    <tr>
+                        <th>推荐案例：</th>
                         <td id="designer_cases">
                             @if (!empty($cases))
                             <ul>

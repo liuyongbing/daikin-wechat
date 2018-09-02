@@ -67,7 +67,8 @@
                                 </td>
 							</tr>
                             
-							<th>设计师：</th>
+                            <tr>
+                                <th>设计师：</th>
 								<td>
                                     <select class="select" name="designer_id" style="width: 530px;">
                                         <option value="0">请选择</option>
@@ -77,6 +78,19 @@
                                     </select>
                                 </td>
 							</tr>
+                            
+                            <tr>
+                                <th>推荐案例：</th>
+                                <td id="designer_cases">
+                                    @if (!empty($cases))
+                                    <ul>
+                                        @foreach($cases as $case)
+                                        <li><input class="checkbox" type="checkbox" name="recommend_ids[]" value="{{ $case->id }}" @if(in_array($case->id, $recommendIds)) checked @endif />{{ $case->title }}</li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
+                                </td>
+                            </tr>
                             
 							<tr>
 								<th>视频：</th>
