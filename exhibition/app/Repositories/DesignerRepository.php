@@ -6,7 +6,7 @@ use App\Http\Model\Life;
 
 class DesignerRepository
 {
-    public function cases($designerId)
+    public function cases($designerId, $except = null)
     {
         $data = [];
         
@@ -17,7 +17,14 @@ class DesignerRepository
                 'designer_id'   => $designerId,
                 'state'         => 0
             ];
-            $data = Life::where($conditions)->get();
+            
+            $query = Life::where($conditions);
+            
+            if(!empty($except))
+            {
+                $query->where('id', '!=', $except);
+            }
+            $data = $query->get();
         }
         
         return $data;

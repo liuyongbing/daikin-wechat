@@ -64,6 +64,7 @@ class LifeController extends Controller
                             ->paginate(3);
         }
         
+        $recommendCases = [];
         if (!empty($data->recommend_ids))
         {
             $recommendIds = json_decode($data->recommend_ids, true);

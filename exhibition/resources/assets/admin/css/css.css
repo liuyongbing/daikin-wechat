@@ -37,7 +37,15 @@ span,a{-webkit-tap-highlight-color:rgba(0,0,0,0); text-decoration:none;}
 .fpage a:hover{ text-decoration:underline; color:#0096e0;}
 .fpage a.active{color:#0096e0;}
 
-.logstate{ padding-top:85px; height:32px; line-height:32px; text-align:right; color:#fff; padding-right:15px; font-size:24px;}
+.logstate {
+    padding-top: 25px;
+    height: 32px;
+    line-height: 32px;
+    text-align: right;
+    color: #fff;
+    padding-right: 15px;
+    font-size: 24px;
+}
 .logstate a{ color:#fff;}
 
 

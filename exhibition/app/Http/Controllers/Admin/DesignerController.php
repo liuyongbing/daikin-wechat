@@ -150,10 +150,12 @@ class DesignerController extends Controller
         }
     }
     
-    
     // 设计师的所有案例: 用于推荐设计师相关案例
-    public function cases(DesignerRepository $repository, $id)
+    public function cases(Request $request, DesignerRepository $repository)
     {
-        return $repository->cases($id);
+        $designerId = $request->input('designer_id', '');
+        $except     = $request->input('except', null);
+        
+        return $repository->cases($designerId, $except);
     }
 }

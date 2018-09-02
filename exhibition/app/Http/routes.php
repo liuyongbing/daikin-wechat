@@ -92,7 +92,7 @@ Route::group(['prefix' => 'admin','middleware'=>'admin.login'], function () {
     //设计师
     Route::resource('designer','Admin\DesignerController');
     //设计师案例
-    Route::get('designer/cases/{id}','Admin\DesignerController@cases')->name('designer.cases');
+    Route::get('designer/cases','Admin\DesignerController@cases')->name('designer.cases');
     
     //空调使用说明管理路由
     Route::get('instruction','Admin\InstructionController@index');

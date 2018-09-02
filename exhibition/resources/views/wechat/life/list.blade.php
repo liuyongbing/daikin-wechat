@@ -17,7 +17,7 @@
 	.list-cen{ padding:0 40px;}
 	.list-cen .col{ float:left; width:268px; font-size:16px; color:#666; margin-bottom:20px;}
 	.list-cen .col img{ width:100%;}
-	.list-cen .col:nth-child(odd){ float:right;}
+	.list-cen .col:nth-child(even){ float:right;}
 	.list-cen .col label{ height:35px; line-height:35px; overflow:hidden; display:block; font-size:24px; color:#000; margin-bottom:10px;}
 	.list-cen .col span{ height:70px; overflow:hidden; display:block;}
 	
