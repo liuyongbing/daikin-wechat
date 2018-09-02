@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Wechat;
 
 use App\Http\Controllers\Controller;
+use App\Http\Model\Designer;
 use App\Http\Model\Life;
 use App\Http\Model\LifeType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\Http\Model\Designer;
 
 class LifeController extends Controller
 {
@@ -74,8 +74,8 @@ class LifeController extends Controller
         return view('wechat.life.detail', [
             'data'              => $data,
             'designer'          => $designer,
-            'recommend'         => '$recommend',
-            'recommendCases'   => '$recommendCases',
+            'recommend'         => $recommend,
+            'recommendCases'    => $recommendCases,
         ]);
     }
 }
