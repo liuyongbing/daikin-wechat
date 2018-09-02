@@ -218,6 +218,7 @@ $(function (e) {
     });
     
     //设计师案例
+    var current_id = {{ $data->id }};
     var recommend_ids = {{ json_encode($recommendIds) }};
     var designer_id = 0;
     var html = '';
@@ -228,7 +229,7 @@ $(function (e) {
             var url = "{{ route('designer.cases') }}";
             
             $.ajax({
-                url: url + '?designer_id=' + designer_id + '&except=' + '',
+                url: url + '?designer_id=' + designer_id + '&except=' + current_id,
                 type: "get",
                 data:  "",
                 contentType: false,
@@ -242,7 +243,12 @@ $(function (e) {
                             html += '<li>';
                             html += '<input class="checkbox" type="checkbox" name="recommend_ids[]" value="';
                             html += item.id;
-                            html += '">';
+                            html += '"';
+                            if (item.id == current_id)
+                            {
+                                html += ' checked ';
+                            }
+                            html += '>';
                             html += item.title;
                             html += '</li>';
                         });
