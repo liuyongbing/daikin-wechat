@@ -78,7 +78,7 @@
                                     </select>
                                 </td>
 							</tr>
-                            
+                    
                             <tr>
                                 <th>推荐案例：</th>
                                 <td id="designer_cases">
@@ -207,6 +207,44 @@ $(function (e) {
     // 触发文件选择窗口
     $('.js-reset-image span').on('click', function () {
         $('input[name=image]').trigger('click');
+    });
+    
+    //设计师案例
+    var recommend_ids = {{ json_encode($recommendIds) }};
+    var designer_id = 0;
+    var html = '';
+    $("#designer_id").change(function() {
+        designer_id = $(this).val();
+        if (designer_id > 0)
+        {
+            var url = "{{ route('designer.cases') }}";
+            
+            $.ajax({
+                url: url + '?designer_id=' + designer_id + '&except=' + '',
+                type: "get",
+                data:  "",
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (data) {
+                    if (data)
+                    {
+                        html = '<ul>';
+                        $.each(data, function(i, item) {
+                            html += '<li>';
+                            html += '<input class="checkbox" type="checkbox" name="recommend_ids[]" value="';
+                            html += item.id;
+                            html += '">';
+                            html += item.title;
+                            html += '</li>';
+                        });
+                        html += '</ul>';
+                        $('#designer_cases').html(html);
+                    }
+                },
+                error: function(){}             
+            });
+        }
     });
 });
 </script>
