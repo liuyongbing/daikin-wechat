@@ -225,11 +225,10 @@ $(function (e) {
         designer_id = $(this).val();
         if (designer_id > 0)
         {
-            var url = "{{ route('designer.cases', ['id' => 123]) }}";
-            url.replace('/\d+/', designer_id);
-var url = "http://wechat.daikin.com:8008/exhibition/admin/designer/cases/" + designer_id;
+            var url = "{{ route('designer.cases') }}";
+            
             $.ajax({
-                url: url,
+                url: url + '?designer_id=' + designer_id + '&except=' + ,
                 type: "get",
                 data:  "",
                 contentType: false,
