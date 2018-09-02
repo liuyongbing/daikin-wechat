@@ -219,7 +219,7 @@ $(function (e) {
     
     //设计师案例
     var current_id = {{ $data->id }};
-    var recommend_ids = {{ json_encode($recommendIds) }};
+    var recommend_ids = {!! json_encode($recommendIds) !!};
     var designer_id = 0;
     var html = '';
     $("#designer_id").change(function() {
