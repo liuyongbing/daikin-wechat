@@ -32,6 +32,7 @@
     .other-div .ovf{ margin-right:15px; float:left; width:230px;}
     .other-div .txt b{ font-size:24px; margin-bottom:20px; display:block; margin-bottom:10px;}
     .other-div .txt p{ overflow:hidden; font-size:18px; color:#666; line-height:32px;}
+    .other-div .ovf img{  width:230px; height:120px;}
     
        
     
