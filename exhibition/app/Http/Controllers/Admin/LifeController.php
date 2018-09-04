@@ -89,19 +89,19 @@ class LifeController extends Controller
             $validator= Validator::make($input,$roule,$message);
             if($validator->passes()){
                 $repository = new UploadRepository();
-                $lifefile = [
-                    'type_id'       => $input['type_id'],
-                    'title'         => $input['title'],
+                $attributes = [
+                    'type_id'       => !empty($input['type_id']) ? (int)$input['type_id'] : 0,
+                    'title'         => !empty($input['title']) ? $input['title'] : '',
                     'img'           => $repository->upload($request, 'life'),
-                    'video'         => $input['video'],
-                    'desc'          => $input['desc'],
-                    'designer_id'   => $input['designer_id'],
+                    'video'         => !empty($input['video']) ? $input['video'] : '',
+                    'desc'          => !empty($input['desc']) ? $input['desc'] : '',
+                    'designer_id'   => !empty($input['designer_id']) ? (int)$input['designer_id'] : 0,
                     'recommend_ids' => !empty($input['recommend_ids']) ? json_encode($input['recommend_ids']) : '',
                     'sort'          => isset($input['sort'])?$input['sort']:0,
                     'display'       => isset($input['display'])?$input['display']:1,
                     'state'         => 0
                 ];
-                if($life=Life::create($lifefile)){
+                if($life=Life::create($attributes)){
                     return back()->with('errors','添加成功');
                 }else{
                     return back()->with('errors','添加失败稍后重试');
@@ -168,19 +168,19 @@ class LifeController extends Controller
             
             if($validator->passes()){
                 $repository = new UploadRepository();
-                $lifefile = [
-                    'type_id'       => $input['type_id'],
-                    'title'         => $input['title'],
+                $attributes = [
+                    'type_id'       => !empty($input['type_id']) ? (int)$input['type_id'] : 0,
+                    'title'         => !empty($input['title']) ? $input['title'] : '',
                     'img'           => $repository->upload($request, 'life'),
-                    'video'         => $input['video'],
-                    'desc'          => $input['desc'],
-                    'designer_id'   => $input['designer_id'],
+                    'video'         => !empty($input['video']) ? $input['video'] : '',
+                    'desc'          => !empty($input['desc']) ? $input['desc'] : '',
+                    'designer_id'   => !empty($input['designer_id']) ? (int)$input['designer_id'] : 0,
                     'recommend_ids' => !empty($input['recommend_ids']) ? json_encode($input['recommend_ids']) : '',
                     'sort'          => isset($input['sort'])?$input['sort']:0,
                     'display'       => isset($input['display'])?$input['display']:1,
                     'state'         => 0
                 ];
-                if(Life::where('id',$id)->update($lifefile)){
+                if(Life::where('id',$id)->update($attributes)){
                     return back()->with('errors','更新成功');
                 }else{
                     return back()->with('errors','更新失败稍后重试');
