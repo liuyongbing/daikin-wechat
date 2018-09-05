@@ -58,11 +58,11 @@ class LifeController extends Controller
         {
             //推荐内容:同类型下的最新3条记录
             $cur_type_id = $data->type_id;
-            $recommend   = Life::where('state','!=',1)
-                            ->where('type_id','=',$cur_type_id)
-                            ->whereNotIn('id', $data->id)
-                            ->orderBy('id','desc')
-                            ->paginate(3);
+            $recommend   = Life::where('state', '!=', 1)
+                                ->where('type_id','=', $cur_type_id)
+                                ->where('id', '!=', $data->id)
+                                ->orderBy('id','desc')
+                                ->paginate(3);
         }
         
         $recommendCases = [];
