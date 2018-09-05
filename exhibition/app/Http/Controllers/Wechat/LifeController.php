@@ -60,6 +60,7 @@ class LifeController extends Controller
             $cur_type_id = $data->type_id;
             $recommend   = Life::where('state','!=',1)
                             ->where('type_id','=',$cur_type_id)
+                            ->whereNotIn('id', $data->id)
                             ->orderBy('id','desc')
                             ->paginate(3);
         }
