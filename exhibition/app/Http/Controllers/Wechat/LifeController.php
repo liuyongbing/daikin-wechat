@@ -27,6 +27,8 @@ class LifeController extends Controller
         
         $cur_type_id= $types[0]->id;
         
+        $data = [];
+        
         if(isset($input['cur_type_id']))
         {
             $cur_type_id = $input['cur_type_id'];
