@@ -10,7 +10,30 @@ class LifeRepository
     {
         $data = [];
         
-        $query = Life::where($conditions);
+        $query = new Life();
+        
+        if (isset($conditions['id']))
+        {
+            if (is_array($conditions['id']))
+            {
+                $query->whereIn('id', $conditions['id']);
+            }
+            else
+            {
+                $query->where(['id' => $conditions['id']]);
+            }
+        }
+        
+        if (isset($conditions['type_id']))
+        {
+            $query->where(['type_id' => $conditions['type_id']]);
+        }
+        
+        if (isset($conditions['state']))
+        {
+            $query->where(['state' => $conditions['state']]);
+        }
+        
         if(!empty($except))
         {
             $query->where('id', '!=', $except);
