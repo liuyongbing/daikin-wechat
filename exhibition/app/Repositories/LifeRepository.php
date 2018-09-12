@@ -10,7 +10,7 @@ class LifeRepository
     {
         $data = [];
         
-        $query = new Life();
+        $query = Life::select();
         
         if (isset($conditions['id']))
         {
