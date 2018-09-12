@@ -25,7 +25,7 @@
 </head>
 <body onload="onload()">
 <div id="wrapper" class="clearfix">
-    @include('_layout.leftmenu',['menu'=>'admin/life_type']);    
+    @include('_layout.leftmenu',['menu'=>'admin/life']);    
     <div class="main">
         <div class="maintop">
             <p class="backlist"><a href="{{url('admin/life_type')}}">返回列表</a>

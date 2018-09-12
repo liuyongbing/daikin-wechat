@@ -8,6 +8,7 @@ use App\Http\Model\Life;
 use App\Http\Model\LifeType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use App\Repositories\LifeRepository;
 
 class LifeController extends Controller
 {
@@ -56,13 +57,11 @@ class LifeController extends Controller
         }
         else
         {
-            //推荐内容:同类型下的最新3条记录
-            $cur_type_id = $data->type_id;
-            $recommend   = Life::where('state', '!=', 1)
-                                ->where('type_id','=', $cur_type_id)
-                                ->where('id', '!=', $data->id)
-                                ->orderBy('id','desc')
-                                ->paginate(3);
+            $conditions = [
+                'type_id' => $data->type_id,
+                'state' => 0
+            ];
+            $recommend = $this->getList($conditions, 3, $data->id);
         }
         
         $recommendCases = [];
@@ -79,5 +78,11 @@ class LifeController extends Controller
             'recommend'         => $recommend,
             'recommendCases'    => $recommendCases,
         ]);
+    }
+    
+    protected function getList($conditions = [], $limit = 9, $except = null)
+    {
+        $repository = new LifeRepository();
+        $data = $repository->list($conditions, $limit, $except);
     }
 }

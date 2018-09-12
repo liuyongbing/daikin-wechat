@@ -26,7 +26,7 @@
 </head>
 <body onload="onload();">
 	<div id="wrapper" class="clearfix">
-		@include('_layout.leftmenu',['menu'=>'admin/designer']);
+		@include('_layout.leftmenu',['menu'=>'admin/life']);
 		<div class="main">
 			<div class="maintop">
 				<p class="backlist">

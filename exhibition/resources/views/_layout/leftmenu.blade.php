@@ -10,8 +10,8 @@
                 <li><a href="{{url('admin/message')}}" @if($menu=='admin/message')class='active'@endif>短信管理</a></li>            
             	<li><a href="{{url('admin/awards')}}" @if($menu=='admin/awards')class='active'@endif>品牌荣耀</a></li>
             	<li><a href="{{url('admin/life')}}" @if($menu=='admin/life')class='active'@endif>住宅生活</a></li>
-            	<li><a href="{{url('admin/life_type')}}" @if($menu=='admin/life_type')class='active'@endif>案例类别</a></li>
-            	<li><a href="{{url('admin/designer')}}" @if($menu=='admin/designer')class='active'@endif>设计师</a></li>
+            	<!--li><a href="{{url('admin/life_type')}}" @if($menu=='admin/life_type')class='active'@endif>案例类别</a></li>
+            	<li><a href="{{url('admin/designer')}}" @if($menu=='admin/designer')class='active'@endif>设计师</a></li-->
             	<li><a href="{{url('admin/instruction')}}" @if($menu=='admin/instruction')class='active'@endif>空调使用说明</a></li>
             @endif
         </ul>

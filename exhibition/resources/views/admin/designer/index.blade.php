@@ -1,12 +1,13 @@
 @extends('_layout.admin')
 @section('content')
     <div id="wrapper" class="clearfix">
-    @include('_layout.leftmenu',['menu'=>'admin/designer']);
+    @include('_layout.leftmenu',['menu'=>'admin/life']);
 
         <div class="main">
             <div class="maintop">
                 <div class="backlist">
-                    <a href="{{url('admin/designer/create')}}">新增</a>
+                    <a href="{{url('admin/designer/create')}}">新增</a> | 
+                    <a href="{{url('admin/life_type')}}">案例类别</a>
                 </div>
                 <!--div class="schbox" >
 	                <form method="get">

@@ -1,20 +1,20 @@
 @extends('_layout.admin')
 @section('content')
     <div id="wrapper" class="clearfix">
-    @include('_layout.leftmenu',['menu'=>'admin/life_type']);
+    @include('_layout.leftmenu',['menu'=>'admin/life']);
 
         <div class="main">
-            <!--div class="maintop">
+            <div class="maintop">
                 <div class="backlist">
-                    <a href="{{url('admin/life_type/create')}}">新增</a>
+                    <a href="{{url('admin/designer')}}">设计师</a>
                 </div>
-                <div class="schbox" >
+                <!--div class="schbox" >
 	                <form method="get">
 	                {{csrf_field()}}
                     <a style="position: absolute;" href="javascript:void(0)" onclick="submitForm();">查询数据</a>
 	                </form>
-	            </div>
-            </div-->
+	            </div-->
+            </div>
 
             <div class="mainbom" style="margin-top: 10px">
                 <div class="listbox">
