@@ -28,16 +28,29 @@ class LifeController extends Controller
         $cur_type_id= $types[0]->id;
         
         if(isset($input['cur_type_id']))
+        {
             $cur_type_id = $input['cur_type_id'];
-        
-            $data=Life::where('state','!=',1)->where('type_id','=',$cur_type_id)->orderBy('sort','desc')->paginate(9);
+            
+            $conditions = [
+                'type_id' => $cur_type_id,
+                'state' => 0
+            ];
+            $data = $this->getList($conditions, 9);
+        }
         
         if ($data&&count($data)>0)
-            foreach ($data as $life_obj){
+        {
+            foreach ($data as $life_obj)
+            {
                 $life_obj->type = LifeType::find($life_obj->type_id)->name;
             }
+        }
         
-        return view('wechat.life.list',compact('data','types','cur_type_id'));
+        return view('wechat.life.list', [
+            'data' => $data,
+            'types' => $types,
+            'cur_type_id' => $cur_type_id,
+        ]);
     }
     
     //  show 详细信息展示页
@@ -68,8 +81,11 @@ class LifeController extends Controller
         if (!empty($data->recommend_ids))
         {
             $recommendIds = json_decode($data->recommend_ids, true);
-            $conditions = ['id' => $recommendIds, 'state' => 0];
-            $recommendCases = Life::where($conditions)->get();
+            $conditions = [
+                'id' => $recommendIds,
+                'state' => 0
+            ];
+            $recommendCases = $this->getList($conditions);
         }
         
         return view('wechat.life.detail', [
@@ -80,9 +96,11 @@ class LifeController extends Controller
         ]);
     }
     
-    protected function getList($conditions = [], $limit = 9, $except = null)
+    protected function getList($conditions = [], $limit = null, $except = null)
     {
         $repository = new LifeRepository();
         $data = $repository->list($conditions, $limit, $except);
+        
+        return $data;
     }
 }

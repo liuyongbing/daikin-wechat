@@ -6,7 +6,7 @@ use App\Http\Model\Life;
 
 class LifeRepository
 {
-    public function list($conditions = [], $limit = 9, $except = null)
+    public function list($conditions = [], $limit = null, $except = null)
     {
         $data = [];
         
@@ -17,7 +17,15 @@ class LifeRepository
         }
         
         $query->orderBy('sort','desc')->orderBy('id','desc');
-        $data = $query->paginate($limit);
+        
+        if (!empty($limit))
+        {
+            $data = $query->paginate($limit);
+        }
+        else
+        {
+            $data = $query->get();
+        }
         
         return $data;
     }
