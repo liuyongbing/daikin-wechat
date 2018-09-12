@@ -29,8 +29,10 @@
                     <table cellpadding="0" cellspacing="0">
 
                         <tr>
-                            <th width="150"><span style="padding-left:38px;">类别</span></th>
-                            <th width="500"><span style="padding-left:100px;">视频</span></th>
+                            <th width="150"><span>类别</span></th>
+                            <th width="150"><span>标题</span></th>
+                            <th width="150"><span>封面</span></th>
+                            <th width="500"><span>视频</span></th>
                             <th width="100"><span>排序</span></th>
                             <th width="100"><span>显示</span></th>
                             <th width="100"></th>
@@ -41,7 +43,9 @@
                         @foreach($data as $value)
                             <tr id="tablerows" <?php (($i++%2)==0) ? $class='class="odd"':$class='';echo $class; ?>>
                             <td><span style="padding-left:30px;">{{$value->type}}</span></td>
-                            <td style="padding-top:20px;padding-left:100px;">{!! $value->video !!}</td>
+                            <td><span>{{$value->title}}</span></td>
+                            <td><span><img src="{{$value->img}}" /></span></td>
+                            <td style="padding-top:20px;">{!! $value->video !!}</td>
                             <td><span>{{$value->sort}}</span></td>
                             <td><span>{{$value->display==1?'是':'否'}}</span></td>
                             </td>
