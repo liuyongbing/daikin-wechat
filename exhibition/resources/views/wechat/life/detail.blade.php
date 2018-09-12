@@ -76,9 +76,9 @@
     <!--设计师-->
     
     @if (!empty($recommend))
-    <!--其他优秀设计-->
+    <!--同分类下的推荐视频-->
     <div class="other-div">
-        <div class="title"><span>其他优秀设计</span></div>
+        <div class="title"><span>推荐视频</span></div>
         <div class="other-list">
         @foreach($recommend as $life)
             <div class="col">
@@ -93,13 +93,13 @@
         @endforeach
         </div>
     </div>
-    <!--其他优秀设计-->
+    <!--同分类下的推荐视频-->
     @endif
     
     @if (!empty($recommendCases))
-    <!--其他优秀设计-->
+    <!--设计师相关的推荐视频-->
     <div class="other-div">
-        <div class="title"><span>其他优秀设计</span></div>
+        <div class="title"><span>推荐视频</span></div>
         <div class="other-list">
         @foreach($recommendCases as $life)
             <div class="col">
@@ -114,7 +114,7 @@
         @endforeach
         </div>
     </div>
-    <!--其他优秀设计-->
+    <!--设计师相关的推荐视频-->
     @endif
     
 </div>
