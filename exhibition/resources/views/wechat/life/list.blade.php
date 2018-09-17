@@ -34,7 +34,7 @@
 
     <div class="head">
         <a href="javascript:void(0);" class="logo"></a>
-        <a class="return" href="{{ env('WEB_SITE_URL', '/life/cat2.html') }}">返回</a>
+        <a class="return" href="{{ env('WEB_SITE_URL' . '/exhibition', '') }}/life/cat2.html">返回</a>
     </div>
 	
 	<div class="list-type">
