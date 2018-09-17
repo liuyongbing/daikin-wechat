@@ -44,7 +44,7 @@
                             <tr id="tablerows" <?php (($i++%2)==0) ? $class='class="odd"':$class='';echo $class; ?>>
                             <td><span style="padding-left:30px;">{{$value->type}}</span></td>
                             <td><span>{{$value->title}}</span></td>
-                            <td><span><img src="{{$value->img}}" /></span></td>
+                            <td><span><img src="{{$value->img}}" width="268" height="138" /></span></td>
                             <td style="padding-top:20px;">{!! $value->video !!}</td>
                             <td><span>{{$value->sort}}</span></td>
                             <td><span>{{$value->display==1?'是':'否'}}</span></td>

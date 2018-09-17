@@ -23,16 +23,19 @@
 	.list-cen .col:nth-child(even){ float:right;}
 	.list-cen .col label{ height:35px; line-height:35px; overflow:hidden; display:block; font-size:24px; color:#000; margin-bottom:10px;}
 	.list-cen .col span{ height:70px; overflow:hidden; display:block;}
+    .list-cen .col .ovf{ width:268px; height:142px;}
+    .list-cen .col img{ width:268px; height:auto;}
 	
     </style>
 </head>
 <body>
 
 <div class="container">
-	
-	<div class="head">
-		<a href="javascript:void(0);" class="logo"></a>
-	</div>
+
+    <div class="head">
+        <a href="javascript:void(0);" class="logo"></a>
+        <a class="return" href="{{ env('WEB_SITE_URL', '/life/cat2.html') }}">返回</a>
+    </div>
 	
 	<div class="list-type">
     @if (!empty($types))
