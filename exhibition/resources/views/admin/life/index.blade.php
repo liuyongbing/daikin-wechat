@@ -11,16 +11,16 @@
                     <a href="{{url('admin/designer')}}">设计师</a>
                 </div>
                 <div class="schbox" >
-	                <form method="get">
-	                {{csrf_field()}}
-	                  
-	                  <select name="cur_type_id" type="text" class="txt">
-	                  	@foreach($types as $type)
+                    <form method="get">
+                    {{csrf_field()}}
+                      
+                      <select name="cur_type_id" type="text" class="txt">
+                        @foreach($types as $type)
                         <option value="{{$type->id}}" @if($type->id==$cur_type_id) selected @endif>{{$type->name}}</option>
                         @endforeach
                     </select><a style="position: absolute;" href="javascript:void(0)" onclick="submitForm();">查询数据</a>
-	                </form>
-	            </div>
+                    </form>
+                </div>
             </div>
 
 
@@ -45,7 +45,7 @@
                             <td><span style="padding-left:30px;">{{$value->type}}</span></td>
                             <td><span>{{$value->title}}</span></td>
                             <td><span><img src="{{$value->img}}" width="268" height="138" /></span></td>
-                            <td style="padding-top:20px;">{!! $value->video !!}</td>
+                            <td style="padding-top:20px;">{!! preg_replace(['/width="(\d+)"/', '/height="(\d+)"/'], ['width="300"', 'height="200"'], $value->video) !!}</td>
                             <td><span>{{$value->sort}}</span></td>
                             <td><span>{{$value->display==1?'是':'否'}}</span></td>
                             </td>
