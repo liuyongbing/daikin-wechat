@@ -29,28 +29,25 @@
                     <table cellpadding="0" cellspacing="0">
 
                         <tr>
-                            <th width="150"><span>类别</span></th>
-                            <th width="150"><span>标题</span></th>
-                            <th width="150"><span>封面</span></th>
-                            <th width="500"><span>视频</span></th>
-                            <th width="100"><span>排序</span></th>
-                            <th width="100"><span>显示</span></th>
+                            <th width="200"><span style="padding-left:10px;">类别</span></th>
+                            <th width="200"><span>标题</span></th>
+                            <th width="200"><span>封面</span></th>
+                            <th width="80"><span>排序</span></th>
+                            <th width="80"><span>显示</span></th>
                             <th width="100"></th>
                             <th width="100"></th>
                         </tr>
 
                         <?php $i=1 ;?>
                         @foreach($data as $value)
-                            <tr id="tablerows" <?php (($i++%2)==0) ? $class='class="odd"':$class='';echo $class; ?>>
-                            <td><span style="padding-left:30px;">{{$value->type}}</span></td>
+                        <tr id="tablerows" <?php (($i++%2)==0) ? $class='class="odd"':$class='';echo $class; ?>>
+                            <td><span style="padding-left:10px;">{{$value->type}}</span></td>
                             <td><span>{{$value->title}}</span></td>
                             <td><span><img src="{{$value->img}}" width="268" height="138" /></span></td>
-                            <td style="padding-top:20px;">{!! preg_replace(['/width="(\d+)"/', '/height="(\d+)"/'], ['width="300"', 'height="200"'], $value->video) !!}</td>
                             <td><span>{{$value->sort}}</span></td>
                             <td><span>{{$value->display==1?'是':'否'}}</span></td>
-                            </td>
                             <td align="center"><a href="{{url('admin/life/'.$value->id)}}">修改</a></td>
-                            <td> <a href="javascript:void(0)" class="delrows" onclick="deltablerows(this,'{{csrf_token()}}',{{$value->id}})">删除</a></td>
+                            <td><a href="javascript:void(0)" class="delrows" onclick="deltablerows(this,'{{csrf_token()}}',{{$value->id}})">删除</a></td>
                         </tr>
                         @endforeach
                     </table>
