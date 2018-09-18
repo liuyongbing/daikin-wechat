@@ -51,6 +51,7 @@
     
     <div class="head">
         <a href="javascript:void(0);" class="logo"></a>
+        <a class="return" href="{{ route('wechat.life.list', ['cur_type_id' => $data->type_id]) }}">返回</a>
     </div>
     
     <div class="video">
@@ -83,9 +84,9 @@
     <!--设计师-->
     
     @if (!empty($recommend))
-    <!--同分类下的推荐视频-->
+    <!--同分类下的视频推荐-->
     <div class="other-div">
-        <div class="title"><span>推荐视频</span></div>
+        <div class="title"><span>视频推荐</span></div>
         <div class="other-list">
         @foreach($recommend as $life)
             <div class="col">
@@ -100,13 +101,13 @@
         @endforeach
         </div>
     </div>
-    <!--同分类下的推荐视频-->
+    <!--同分类下的视频推荐-->
     @endif
     
     @if (!empty($recommendCases))
-    <!--设计师相关的推荐视频-->
+    <!--设计师相关的视频推荐-->
     <div class="other-div">
-        <div class="title"><span>推荐视频</span></div>
+        <div class="title"><span>视频推荐</span></div>
         <div class="other-list">
         @foreach($recommendCases as $life)
             <div class="col">
@@ -121,7 +122,7 @@
         @endforeach
         </div>
     </div>
-    <!--设计师相关的推荐视频-->
+    <!--设计师相关的视频推荐-->
     @endif
     
 </div>
