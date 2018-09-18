@@ -91,10 +91,14 @@
         @foreach($recommend as $life)
             <div class="col">
                 @if (!empty($life->img))
-                <div class="ovf"><img src="{{ $life->img }}"></div>
+                <div class="ovf">
+                    <a href="{{ route('wechat.life.detail', ['id' => $life->id]) }}">
+                        <img src="{{ $life->img }}" />
+                    </a>
+                </div>
                 @endif
                 <div class="txt">
-                    <b>{{ $life->title }}</b>
+                    <b><a href="{{ route('wechat.life.detail', ['id' => $life->id]) }}">{{ $life->title }}</a></b>
                     <p>{!! $life->desc !!}</p>
                 </div>
             </div>  
@@ -112,10 +116,14 @@
         @foreach($recommendCases as $life)
             <div class="col">
                 @if (!empty($life->img))
-                <div class="ovf"><img src="{{ $life->img }}"></div>
+                <div class="ovf">
+                    <a href="{{ route('wechat.life.detail', ['id' => $life->id]) }}">
+                        <img src="{{ $life->img }}" />
+                    </a>
+                </div>
                 @endif
                 <div class="txt">
-                    <b>{{ $life->title }}</b>
+                    <b><a href="{{ route('wechat.life.detail', ['id' => $life->id]) }}">{{ $life->title }}</b></a>
                     <p>{!! $life->desc !!}</p>
                 </div>
             </div>  
