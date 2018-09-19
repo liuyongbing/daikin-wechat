@@ -6,18 +6,23 @@
         <div class="main">
             <div class="maintop">
                 <div class="backlist">
-                    <a href="{{url('admin/designer/create')}}">新增设计师</a> | 
-                    <a href="{{url('admin/life_type')}}">案例类别</a>
+                    <a href="{{url('admin/life/create')}}">新增视频</a> | 
+                    <a href="{{url('admin/life_type')}}">案例类别</a> | 
+                    <a href="{{url('admin/designer')}}" class="sub_menu_cur">设计师管理</a>
                 </div>
                 <!--div class="schbox" >
-	                <form method="get">
-	                {{csrf_field()}}
+                    <form method="get">
+                    {{csrf_field()}}
                     <a style="position: absolute;" href="javascript:void(0)" onclick="submitForm();">查询数据</a>
-	                </form>
-	            </div-->
+                    </form>
+                </div-->
+                
+                <div class="schbox" >
+                    <a href="{{url('admin/designer/create')}}">新增设计师</a>
+                </div>
             </div>
 
-            <div class="mainbom" style="margin-top: 10px">
+            <div class="mainbom" style="margin-top: 60px">
                 <div class="listbox">
                     <table cellpadding="0" cellspacing="0">
                         <tr>

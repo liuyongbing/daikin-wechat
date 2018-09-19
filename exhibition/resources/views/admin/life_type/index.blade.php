@@ -6,14 +6,16 @@
         <div class="main">
             <div class="maintop">
                 <div class="backlist">
-                    <a href="{{url('admin/designer')}}">设计师</a>
+                    <a href="{{url('admin/life/create')}}">新增视频</a> | 
+                    <a href="{{url('admin/life_type')}}" class="sub_menu_cur">案例类别</a> | 
+                    <a href="{{url('admin/designer')}}">设计师管理</a>
                 </div>
                 <!--div class="schbox" >
-	                <form method="get">
-	                {{csrf_field()}}
+                    <form method="get">
+                    {{csrf_field()}}
                     <a style="position: absolute;" href="javascript:void(0)" onclick="submitForm();">查询数据</a>
-	                </form>
-	            </div-->
+                    </form>
+                </div-->
             </div>
 
             <div class="mainbom" style="margin-top: 10px">
@@ -37,11 +39,9 @@
                 </div>
             </div>
 
-
             <div class="mainend">
                 @include('admin.paginate')
             </div>
-
 
         </div>
 

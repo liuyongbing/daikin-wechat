@@ -4,126 +4,128 @@
 <meta charset="utf-8">
 <title>后台管理</title>
 <link href="{{asset('resources/assets/admin/css/css.css')}}"
-	rel="stylesheet">
+    rel="stylesheet">
 <script src="{{asset('resources/assets/admin/js/jquery-1.8.0.min.js')}}"></script>
 <script type="text/javascript" charset="utf-8" src="{{asset('public/ueditor/ueditor.config.js')}}"></script>
 <script type="text/javascript" charset="utf-8" src="{{asset('public/ueditor/ueditor.all.min.js')}}"></script>
 <script type="text/javascript" charset="utf-8" src="{{asset('public/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
 <script type="text/javascript">
-	function onload(){
-		@if(count($errors)&&is_object($errors))
-			str = '';
-			@foreach($errors->all() as $error)
-			str += '{{$error}}'+'\n';
-			@endforeach
-			alert(str);
-		@elseif($errors=='添加成功')
-			alert('添加成功');
-		    location.href='{{url('admin/designer')}}';			
-		@endif
-	}
+    function onload(){
+        @if(count($errors)&&is_object($errors))
+            str = '';
+            @foreach($errors->all() as $error)
+            str += '{{$error}}'+'\n';
+            @endforeach
+            alert(str);
+        @elseif($errors=='添加成功')
+            alert('添加成功');
+            location.href='{{url('admin/designer')}}';			
+        @endif
+    }
 </script>
 </head>
 <body onload="onload();">
-	<div id="wrapper" class="clearfix">
-		@include('_layout.leftmenu',['menu'=>'admin/life']);
-		<div class="main">
-			<div class="maintop">
-				<p class="backlist">
-					<a href="{{url('admin/designer')}}">返回列表</a>
-				</p>
-			</div>
-		  	<form id="uploadForm" action="{{url('uploadImages')}}" method="post"">
-		    {{csrf_field()}}
-		    <input style="display: none;" name="image" type="file" class="inputFile" />
-		    </form>
-			<form method="post" action="{{url('admin/designer')}}" enctype="multipart/form-data" >
-				<div class="mainbom">					
-					<div class="modbox">
+    <div id="wrapper" class="clearfix">
+        @include('_layout.leftmenu',['menu'=>'admin/life']);
+        <div class="main">
+            <div class="maintop">
+                <div class="backlist">
+                    <a href="{{url('admin/life/create')}}">新增视频</a> | 
+                    <a href="{{url('admin/life_type')}}">案例类别</a> | 
+                    <a href="{{url('admin/designer')}}" class="sub_menu_cur">设计师管理</a>
+                </div>
+            </div>
+            <form id="uploadForm" action="{{url('uploadImages')}}" method="post"">
+            {{csrf_field()}}
+            <input style="display: none;" name="image" type="file" class="inputFile" />
+            </form>
+            <form method="post" action="{{url('admin/designer')}}" enctype="multipart/form-data" >
+                <div class="mainbom">					
+                    <div class="modbox">
 
-						<table cellpadding="0" cellspacing="0">
-							{{csrf_field()}}
-							<tr>
+                        <table cellpadding="0" cellspacing="0">
+                            {{csrf_field()}}
+                            <tr>
                             
-							<tr>
-								<th>姓名：</th>
-								<td>
+                            <tr>
+                                <th>姓名：</th>
+                                <td>
                                     <input type="text" name="name"  class="txt" style="width: 520px;" value="{{old('name', '')}}" />
                                 </td>
-							</tr>
+                            </tr>
                             
-							<tr>
-								<th>标题：</th>
-								<td>
+                            <tr>
+                                <th>标题：</th>
+                                <td>
                                     <input type="text" name="title"  class="txt" style="width: 520px;" value="{{old('title', '')}}" />
                                 </td>
-							</tr>
+                            </tr>
                             
-							<tr>
-								<th>头像：</th>
-								<td>
+                            <tr>
+                                <th>头像：</th>
+                                <td>
                                     <input type="file" name="upload_file" class="txt" style="width: 520px;" />
                                     <input type="hidden" name="img" value="{{old('img', '')}}" />
                                 </td>
-							</tr>
+                            </tr>
                             
-							<tr>
-								<th>说明内容：</th>
-								<td><script id="desc" type="text/plain" style="margin-top:20px;width:530px;height:200px;">{!!old('desc')!!}</script></td>
-							</tr>
+                            <tr>
+                                <th>说明内容：</th>
+                                <td><script id="desc" type="text/plain" style="margin-top:20px;width:530px;height:200px;">{!!old('desc')!!}</script></td>
+                            </tr>
                             
-							<!--tr>
-								<th>是否显示</th>
-								<td>
-								<label class="desc"><input name="display" type="radio"  value="1" @if(old('display',1)==1)checked="1"@endif/>是 </label> 
-								<label class="desc"><input name="display" type="radio"  value="0" @if(old('display',1)==0)checked="1"@endif/>否 </label> 
-								</td>
-							</tr-->
+                            <!--tr>
+                                <th>是否显示</th>
+                                <td>
+                                <label class="desc"><input name="display" type="radio"  value="1" @if(old('display',1)==1)checked="1"@endif/>是 </label> 
+                                <label class="desc"><input name="display" type="radio"  value="0" @if(old('display',1)==0)checked="1"@endif/>否 </label> 
+                                </td>
+                            </tr-->
                             
-							<tr>
-								<th>&nbsp;</th>
-								<td><a href="javascript:void(0)" class="btnsub"
-									onclick="submitForm()">提交</a></td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</form>
-		</div>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <td><a href="javascript:void(0)" class="btnsub"
+                                    onclick="submitForm()">提交</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
 
-	</div>
+    </div>
 
-	<script>
+    <script>
 
     function submitForm() {
         $("form").submit();
     }
     var ue = UE.getEditor('video', {
-	    toolbars: [
-	        [  
-		       'source', '|','insertvideo', '|','preview'
-	         ]
-	    ],
-	    autoHeightEnabled: true,
-	    autoFloatEnabled: true,
-	    textarea: 'video'
-	});
+        toolbars: [
+            [  
+               'source', '|','insertvideo', '|','preview'
+             ]
+        ],
+        autoHeightEnabled: true,
+        autoFloatEnabled: true,
+        textarea: 'video'
+    });
 
     var ue2 = UE.getEditor('desc', {
-	    toolbars: [
-	        [  
-		        'fullscreen', 'source', '|', 'undo', 'redo', '|',
-	            'bold', 'italic', 'underline', 'removeformat', 'formatmatch', 'autotypeset','forecolor', 'backcolor','fontfamily', 'fontsize', '|',           
-	             'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-	            'simpleupload', 'insertimage','insertvideo', 'attachment','|',
-	            'horizontal', '|',	      
-	            'print', 'preview', 'searchreplace', 'drafts'
-	         ]
-	    ],
-	    autoHeightEnabled: true,
-	    autoFloatEnabled: true,
-	    textarea: 'desc'
-	});
+        toolbars: [
+            [  
+                'fullscreen', 'source', '|', 'undo', 'redo', '|',
+                'bold', 'italic', 'underline', 'removeformat', 'formatmatch', 'autotypeset','forecolor', 'backcolor','fontfamily', 'fontsize', '|',           
+                 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+                'simpleupload', 'insertimage','insertvideo', 'attachment','|',
+                'horizontal', '|',	      
+                'print', 'preview', 'searchreplace', 'drafts'
+             ]
+        ],
+        autoHeightEnabled: true,
+        autoFloatEnabled: true,
+        textarea: 'desc'
+    });
 </script>
 
 
@@ -155,7 +157,7 @@ $(function (e) {
             error: function(){}             
         });
     });
- 	
+    
     // 选择完要上传的文件后, 直接触发表单提交
     $('input[name=image]').on('change', function () {
         // 如果确认已经选择了一张图片, 则进行上传操作

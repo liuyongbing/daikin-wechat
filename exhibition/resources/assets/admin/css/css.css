@@ -51,6 +51,7 @@ span,a{-webkit-tap-highlight-color:rgba(0,0,0,0); text-decoration:none;}
 
 .backlist{ padding-left:27px; line-height:70px; color:#0096e0; font-size:24px;}
 .backlist a{ color:#0096e0; font-size:24px;}
+.backlist a.sub_menu_cur{ color:orange;}
 
 .modbox{ padding-left:28px; padding-top:22px;}
 .modbox th{ height:75px; width:128px; line-height:75px; font-size:24px; color:#333333; font-weight:normal; text-align:left; }
@@ -68,14 +69,4 @@ span,a{-webkit-tap-highlight-color:rgba(0,0,0,0); text-decoration:none;}
 .loginbox{ width:380px; margin:0 auto; position:relative;}
 .loginbox .txt{ width:260px; height:30px; line-height:30px; position:absolute; right:4px; color:#000; font-size:16px; border:none; background:none;}
 .btnlog{ position:absolute; display:block; width:85px; height:30px; right:0; top:535px;}
-
-
-
-
-
-
-
-
-
-
 
