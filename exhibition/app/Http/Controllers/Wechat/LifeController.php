@@ -32,13 +32,14 @@ class LifeController extends Controller
         if(isset($input['cur_type_id']))
         {
             $cur_type_id = $input['cur_type_id'];
-            
-            $conditions = [
-                'type_id' => $cur_type_id,
-                'state' => 0
-            ];
-            $data = $this->getList($conditions, 9);
         }
+        
+        $conditions = [
+            'type_id' => $cur_type_id,
+            'display' => 1,
+            'state' => 0
+        ];
+        $data = $this->getList($conditions, 9);
         
         if ($data&&count($data)>0)
         {
@@ -74,6 +75,7 @@ class LifeController extends Controller
         {
             $conditions = [
                 'type_id' => $data->type_id,
+                'display' => 1,
                 'state' => 0
             ];
             $recommend = $this->getList($conditions, 3, $data->id);
@@ -85,6 +87,7 @@ class LifeController extends Controller
             $recommendIds = json_decode($data->recommend_ids, true);
             $conditions = [
                 'id' => $recommendIds,
+                'display' => 1,
                 'state' => 0
             ];
             $recommendCases = $this->getList($conditions);

@@ -4,14 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Model\Banner;
+use App\Http\Model\Designer;
 use App\Http\Model\Life;
 use App\Http\Model\LifeType;
+use App\Repositories\DesignerRepository;
+use App\Repositories\LifeRepository;
 use App\Repositories\UploadRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
-use App\Http\Model\Designer;
-use App\Repositories\DesignerRepository;
 
 class LifeController extends Controller
 {
@@ -30,16 +31,24 @@ class LifeController extends Controller
         
         $cur_type_id= $types[0]->id;
         
-        $data = [];
         if(isset($input['cur_type_id']))
+        {
             $cur_type_id = $input['cur_type_id'];
+        }
         
-            $data=Life::where('state','!=',1)->where('type_id','=',$cur_type_id)->orderBy('sort','desc')->paginate(9);
+        $data = [];
+        $conditions = [
+            'type_id' => $cur_type_id,
+            'state' => 0
+        ];
+        $data = $this->getList($conditions, 9);
         
         if ($data&&count($data)>0)
+        {
             foreach ($data as $life_obj){
-                $life_obj->type = LifeType::find($life_obj->type_id)->name;        
+                $life_obj->type = LifeType::find($life_obj->type_id)->name;
             }
+        }
         
         return view('admin.life.index', [
             'data' => $data,
@@ -312,5 +321,13 @@ class LifeController extends Controller
         }else{
             return false;
         }
+    }
+    
+    protected function getList($conditions = [], $limit = null, $except = null)
+    {
+        $repository = new LifeRepository();
+        $data = $repository->list($conditions, $limit, $except);
+        
+        return $data;
     }
 }

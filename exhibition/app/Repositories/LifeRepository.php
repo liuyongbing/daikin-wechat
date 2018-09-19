@@ -29,6 +29,11 @@ class LifeRepository
             $query->where(['type_id' => $conditions['type_id']]);
         }
         
+        if (isset($conditions['display']))
+        {
+            $query->where(['display' => $conditions['display']]);
+        }
+        
         if (isset($conditions['state']))
         {
             $query->where(['state' => $conditions['state']]);
