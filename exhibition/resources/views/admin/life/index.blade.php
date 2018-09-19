@@ -6,7 +6,7 @@
         <div class="main">
             <div class="maintop">
                 <div class="backlist">
-                    <a href="{{url('admin/life/create')}}">新增</a> | 
+                    <a href="{{url('admin/life/create')}}">新增视频</a> | 
                     <a href="{{url('admin/life_type')}}">案例类别</a> | 
                     <a href="{{url('admin/designer')}}">设计师</a>
                 </div>

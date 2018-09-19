@@ -28,7 +28,11 @@
     @include('_layout.leftmenu',['menu'=>'admin/life']);    
     <div class="main">
         <div class="maintop">
-            <p class="backlist"><a href="{{url('admin/life_type')}}">返回列表</a>
+            <p class="backlist">
+                <a href="{{url('admin/life_type')}}">返回列表<!-- | 
+                <a href="{{url('admin/life')}}">视频列表</a> | 
+                <a href="{{url('admin/designer')}}">设计师</a-->
+            </a>
         </div>
 		<form id="uploadForm" action="{{url('uploadImages')}}" method="post"">
 		    {{csrf_field()}}
