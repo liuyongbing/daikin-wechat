@@ -101,7 +101,7 @@ $(document).ready(function() {
     var cur_type_id = 5;
     $.ajax({
         method: "GET",
-        url: "/wechat/life/ajax",
+        url: "http://daikin.teyiqi.com/wechat/life/ajax",
         data: { 
             'cur_type_id' : cur_type_id
         },
@@ -114,8 +114,6 @@ $(document).ready(function() {
                     dataStr += '<dd>';
                     dataStr += '    <a href="' + item.url + '">';
                     dataStr += '        <img src="' + item.img_url + '" alt="' + item.title + '" />';
-                    dataStr += '    </a>';
-                    dataStr += '    <a href="' + item.url + '">';
                     dataStr += '        <span>' + item.title + '</span>';
                     dataStr += '    </a>';
                     dataStr += '</dd>';
