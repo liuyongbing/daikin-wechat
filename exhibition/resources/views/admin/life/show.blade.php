@@ -68,6 +68,13 @@
                         </td>
                     </tr>
                     
+                    <tr>
+                        <th>链接URL：</th>
+                        <td>
+                            <input type="text" name="url"  class="txt" style="width: 520px;" value="{{old('url', $data->url)}}" />
+                        </td>
+                    </tr>
+                    
                     @if (!empty($data->img))
                     <tr>
                         <th>预览：</th>

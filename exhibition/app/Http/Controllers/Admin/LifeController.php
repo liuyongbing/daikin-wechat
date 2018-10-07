@@ -87,13 +87,13 @@ class LifeController extends Controller
                 'type_id'=>'required',
                 'title'=>'required',
                 //'img'=>'required',
-                'video'=>'required'
+                //'video'=>'required'
             ];
             $message=[
                 'type_id.required'=>'分类不能为空',
                 'title.required'=>'标题不能为空',
                 //'img.required'=>'缩略图不能为空',
-                'video.required'=>'请录入视频信息'
+                //'video.required'=>'请录入视频信息'
             ];
             $validator= Validator::make($input,$roule,$message);
             if($validator->passes()){
@@ -101,6 +101,7 @@ class LifeController extends Controller
                 $attributes = [
                     'type_id'       => !empty($input['type_id']) ? (int)$input['type_id'] : 0,
                     'title'         => !empty($input['title']) ? $input['title'] : '',
+                    'url'           => !empty($input['url']) ? $input['url'] : '',
                     'img'           => $repository->upload($request, 'life'),
                     'video'         => !empty($input['video']) ? $input['video'] : '',
                     'desc'          => !empty($input['desc']) ? $input['desc'] : '',
@@ -180,6 +181,7 @@ class LifeController extends Controller
                 $attributes = [
                     'type_id'       => !empty($input['type_id']) ? (int)$input['type_id'] : 0,
                     'title'         => !empty($input['title']) ? $input['title'] : '',
+                    'url'           => !empty($input['url']) ? $input['url'] : '',
                     'img'           => $repository->upload($request, 'life'),
                     'video'         => !empty($input['video']) ? $input['video'] : '',
                     'desc'          => !empty($input['desc']) ? $input['desc'] : '',

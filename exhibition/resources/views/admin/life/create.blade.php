@@ -70,6 +70,13 @@
                             </tr>
                             
                             <tr>
+                                <th>链接URL：</th>
+                                <td>
+                                    <input type="text" name="url"  class="txt" style="width: 520px;" value="{{old('url', '')}}" />
+                                </td>
+                            </tr>
+                            
+                            <tr>
                                 <th>设计师：</th>
                                 <td>
                                     <select class="select" name="designer_id" id="designer_id" style="width: 530px;">

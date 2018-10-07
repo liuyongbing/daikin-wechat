@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Model\Designer;
 use App\Http\Model\Life;
 use App\Http\Model\LifeType;
+use App\Repositories\LifeRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\Repositories\LifeRepository;
 
 class LifeController extends Controller
 {
@@ -99,6 +99,39 @@ class LifeController extends Controller
             'recommend'         => $recommend,
             'recommendCases'    => $recommendCases,
         ]);
+    }
+    
+    public function ajax()
+    {
+        $input=Input::except('_token');
+        
+        $types=LifeType::orderBy('sort','desc')->paginate(9);
+        
+        $cur_type_id= $types[0]->id;
+        
+        $data = [];
+        
+        if(isset($input['cur_type_id']))
+        {
+            $cur_type_id = $input['cur_type_id'];
+        }
+        
+        $conditions = [
+            'type_id' => $cur_type_id,
+            'display' => 1,
+            'state' => 0
+        ];
+        $data = $this->getList($conditions);
+        
+        if ($data&&count($data)>0)
+        {
+            foreach ($data as $life_obj)
+            {
+                $life_obj->type = LifeType::find($life_obj->type_id)->name;
+            }
+        }
+        
+        return $data;
     }
     
     protected function getList($conditions = [], $limit = null, $except = null)
