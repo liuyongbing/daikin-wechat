@@ -193,7 +193,6 @@ exhibition/app/Http/Model/Awards.php
 exhibition/app/Http/Model/AwardsType.php
 exhibition/app/Http/Model/Banner.php
 exhibition/app/Http/Model/Instruction.php
-exhibition/app/Http/Model/Life.php
 exhibition/app/Http/Model/LifeType.php
 exhibition/app/Http/Model/Member.php
 exhibition/app/Http/Model/Messages.php
