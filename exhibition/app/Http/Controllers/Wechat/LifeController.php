@@ -103,6 +103,7 @@ class LifeController extends Controller
     
     public function ajax()
     {
+        header('Access-Control-Allow-Origin: *');
         $input=Input::except('_token');
         
         $types=LifeType::orderBy('sort','desc')->paginate(9);
