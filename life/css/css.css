@@ -26,16 +26,18 @@ span,a{-webkit-tap-highlight-color:rgba(0,0,0,0);}
     background: url(../images/list-bg20181007.jpg) no-repeat;
     height: 223px;
 }
-.catprolist dd a{text-align: center;
+.catprolist dd a {
+    text-align: center;
     color: #b8a968;
     text-decoration: none;
     display: block;
-    font-size: 14px;
+    font-size: 18px;
 }
-.catprolist dd  span{
+.catprolist dd span {
     display: block;
-    padding-top: 12px;
+    padding-top: 8px;
 }
+
 .catprolist dd img{
     width: 280px;
     height: 157px;
