@@ -26,6 +26,12 @@ span,a{-webkit-tap-highlight-color:rgba(0,0,0,0);}
     background: url(../images/es/es/list-bg20181007.jpg) no) no-repeat;
     height: 223px;
 }
+.catprolist dd a{text-align: center;
+    color: #b8a968;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
 .catprolist p{ text-align:right; font-size:24px; padding-right:24px; padding-bottom:15px;}
 .catprolist p a{ color:#797979; text-decoration:none;}
 
