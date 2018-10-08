@@ -23,7 +23,7 @@ class LifeController extends Controller
     {
         $input=Input::except('_token');
         
-        $types=LifeType::orderBy('sort','desc')->paginate(9);
+        $types=LifeType::whereIn('id', [1, 2, 3])->orderBy('sort','desc')->paginate(3);
         
         $cur_type_id= $types[0]->id;
         
